@@ -8,8 +8,11 @@ var onRun = function(context, jsonObj) {
     var utils = {
 
         getValByPath: function(path, json){
-            var pieces = path.split('.'),
-                currPath = json;
+            var currPath = json;
+            
+            var pieces = [];
+            pieces.push(path);
+            pieces.push('message');
               
             for(var i = 0; i < pieces.length; i++){
                 var val = pieces[i];
